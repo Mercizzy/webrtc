@@ -50,13 +50,7 @@
         localVideo.srcObject = localStream;
         await localVideo.play();
         logMessage('本地视频预览已开启');
-        // 开始在 canvas 上绘制带时间戳的画面
-        drawTimer = setInterval(() => {
-          ctx.drawImage(localVideo, 0, 0, canvas.width, canvas.height);
-          ctx.fillStyle = 'red';
-          ctx.font = '20px Arial';
-          ctx.fillText(new Date().toLocaleTimeString(), 10, 30);
-        }, 100);
+
       } catch (e) {
         logMessage('获取本地音视频失败: ' + e.message);
       }
